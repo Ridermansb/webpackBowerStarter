@@ -29,7 +29,8 @@ module.exports = {
     },
   plugins: [
     new BowerWebpackPlugin({
-      modulesDirectories: ["node_modules", "bower_components"]
+      modulesDirectories: ["node_modules", "bower_components"],
+      manifestFiles:      ["package.json", "bower.json"]
     })
   ]
 };

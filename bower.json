@@ -6,9 +6,6 @@
     "ridermansb"
   ],
   "license": "ISC",
-  "moduleType": [
-    "node"
-  ],
   "homepage": "",
   "ignore": [
     "**/.*",
