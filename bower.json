@@ -1,0 +1,20 @@
+{
+  "name": "webpackbowerstarter",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "ridermansb"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
