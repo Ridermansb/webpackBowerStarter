@@ -1,4 +1,5 @@
 var webpack = require('webpack'),
+  BowerWebpackPlugin = require("bower-webpack-plugin"),
   path = require('path');
 
 module.exports = {
@@ -27,5 +28,8 @@ module.exports = {
         modulesDirectories: ['node_modules']
     },
   plugins: [
+    new BowerWebpackPlugin({
+      modulesDirectories: ["node_modules", "bower_components"]
+    })
   ]
 };

@@ -1,6 +1,7 @@
 var webpackConfig = require('./webpack.config');
 webpackConfig.devtool = 'inline-source-map';
 webpackConfig.stats = { colors: true, reasons: true };
+//webpackConfig.plugins = [];
 
 module.exports = function(config) {
   config.set({
