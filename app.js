@@ -4,6 +4,8 @@ var angular = require('angular');
 var uiRouter = require('angular-ui-router');
 var HomeController = require('./components/home/homeController');
 
+var stamplay = require('stamplay-js-sdk');
+
 module.exports =
     angular.module('app', [uiRouter, require('angular-material')])
         .config(['$stateProvider', '$urlRouterProvider',

@@ -25,12 +25,20 @@ module.exports = {
   },
   resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.js', 'html'],
-        modulesDirectories: ['node_modules']
+        moduleDirectories: ['node_modules', 'bower_components'],
+        alias: {
+          Q: __dirname + '/bower_components/q/q.js',
+          store: __dirname + '/bower_components/store.js/store.js'
+        }
     },
   plugins: [
     new BowerWebpackPlugin({
-      modulesDirectories: ["node_modules", "bower_components"],
-      manifestFiles:      ["package.json", "bower.json"]
-    })
+      modulesDirectories: ['node_modules', 'bower_components'],
+      manifestFiles: ['package.json', 'bower.json']
+    }),
+    new webpack.ProvidePlugin({
+      Q: "Q",
+      store: "store"
+   })
   ]
 };
