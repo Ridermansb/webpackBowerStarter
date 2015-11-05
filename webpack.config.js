@@ -4,7 +4,10 @@ var webpack = require('webpack'),
     AngularPlugin = require('angular-webpack-plugin');
 
 module.exports = {
-    entry: [path.join(__dirname, 'app.js')],
+    entry: [
+        'webpack/hot/dev-server',
+        path.join(__dirname, 'app.js')
+    ],
     output: {
         path: __dirname,
         filename: 'bundle.js'
@@ -24,15 +27,19 @@ module.exports = {
             }
         ]
     },
+    externals: {
+        stamplay: 'Stamplay'
+    },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         //new BowerWebpackPlugin(),
-        new AngularPlugin()
-        , new webpack.ProvidePlugin({
+        new AngularPlugin(),
+        /*new webpack.ProvidePlugin({
             Q: 'q',
             store: 'store.js',
             Stamplay: 'stamplay-js-sdk'
-        })
-        , new webpack.ResolverPlugin(
+        }),*/
+        new webpack.ResolverPlugin(
             [
                 new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
             ], ["normal", "loader"]
@@ -50,8 +57,8 @@ module.exports = {
             'ngMaterial': 'angular-material',
             'ngAnimate': 'angular-animate',
             'ngAria': 'angular-aria'
-            //,'ngStamplay': 'angular-stamplay',
-            //'stamplay': 'angular-stamplay'
+            ,'ngStamplay': 'angular-stamplay'
+            //, 'stamplay': 'stamplay-js-sdk's
         }
     }
 };
