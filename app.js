@@ -2,8 +2,8 @@ require('./app.scss');
 
 var HomeController = require('./components/home/homeController');
 
-console.log('I"m a Stamplay', Stamplay, ' and init ', Stamplay.init);
-console.log('angular is', angular);
+console.assert(angular != null, 'Angular object is not defined');
+console.assert(typeof(Stamplay.init) === 'function', 'Stamplay.init is not a function', Stamplay);
 
 module.exports =
     angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate']) //'ngStamplay'
