@@ -1,13 +1,12 @@
 require('./app.scss');
 
-var angular = require('angular');
-var uiRouter = require('angular-ui-router');
 var HomeController = require('./components/home/homeController');
 
-var stamplay = require('stamplay-js-sdk');
+console.log('I"m a Stamplay', Stamplay, ' and init ', Stamplay.init);
+console.log('angular is', angular);
 
 module.exports =
-    angular.module('app', [uiRouter, require('angular-material')])
+    angular.module('app', ['ui.router', 'ngMaterial', 'ngAria', 'ngAnimate']) //'ngStamplay'
         .config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise('/');
